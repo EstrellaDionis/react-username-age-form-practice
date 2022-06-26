@@ -10,7 +10,18 @@ const AddUser = props => {
 
     const addUserHandler = (event) => {
         event.preventDefault()
+        //returns nothing because we want there to be a name and an age given to us
+        if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0){
+            return;
+        }
+        // returns nothing if age is less than 1. The + ensures that what we receive is a number
+        if (+enteredAge < 1) {
+            return;
+        }
         console.log(enteredUsername, enteredAge)
+        //reset inputs back to empty. You MUST make sure to have value tag in inputs with the state so it visually makes the inputs empty
+        setEnteredUsername('')
+        setEnteredAge('')
     }
 
     const usernameChangeHandler = (event) => {
@@ -25,9 +36,10 @@ const AddUser = props => {
     <Card className={classes.input}>
     <form onSubmit={addUserHandler}>
         <label htmlFor='username'>Username</label>
-        <input id="username" type="text" onChange={usernameChangeHandler}/>
+        {/* passing in the state to the value makes it so it refreshes after on submit thanks to the addUserHandler */}
+        <input id="username" type="text" value={enteredUsername} onChange={usernameChangeHandler}/>
         <label htmlFor='age'>Age (Years)</label>
-        <input id="age" type="number" onChange={ageChangeHandler}/>
+        <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler}/>
         <Button type='submit'>Add User</Button>
     </form>
     </Card>
