@@ -18,7 +18,8 @@ const AddUser = props => {
         if (+enteredAge < 1) {
             return;
         }
-        console.log(enteredUsername, enteredAge)
+        //two arguments that the onAddUser prop-function is looking for is a username and age
+        props.onAddUser(enteredUsername, enteredAge)
         //reset inputs back to empty. You MUST make sure to have value tag in inputs with the state so it visually makes the inputs empty
         setEnteredUsername('')
         setEnteredAge('')
