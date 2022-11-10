@@ -21,6 +21,7 @@ const AddUser = props => {
             return;
         }
         // returns nothing if age is less than 1. The + ensures that what we receive is a number
+        // the + converts strings into numbers to make sure that we are getting a number. Basically an extremely safe way of making sure its a number.
         if (+enteredAge < 1) {
             setError({
                 title: 'Invalid age',
@@ -47,7 +48,9 @@ const AddUser = props => {
     const errorHandler = () => {
         setError(null)
     }
-
+    // Lesson 91
+    //classes.input on <Card className={classes.input}> are the classes being brought in from the './AddUser.module.css' 
+    //look at Card.js for a little more explanation
     return (
         <div>
         {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}/>}
