@@ -11,6 +11,7 @@ function App() {
     //always want to pass a function to setUsersList because we want to grab the previous state to update
     setUsersList((prevUserList) =>{
       //returning an array because thats what we want and is our state. An array of users
+      //the key of name and age, are being CREATED here since originally, this was just an empty array
       return [...prevUserList, {name: userName, age: userAge, id: Math.random().toString()}]
     })
   }

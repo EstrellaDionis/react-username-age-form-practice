@@ -29,6 +29,7 @@ const AddUser = props => {
             })
             return;
         }
+        // console.log(enteredUsername, enteredAge) //keeping this here as a reminder that this is where you'd console log to see the users
         //two arguments that the onAddUser prop-function is looking for is a username and age
         props.onAddUser(enteredUsername, enteredAge)
         //reset inputs back to empty. You MUST make sure to have value tag in inputs with the state so it visually makes the inputs empty
@@ -51,6 +52,7 @@ const AddUser = props => {
     // Lesson 91
     //classes.input on <Card className={classes.input}> are the classes being brought in from the './AddUser.module.css' 
     //look at Card.js for a little more explanation
+    //Lesson 98 to understand the error
     return (
         <div>
         {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}/>}

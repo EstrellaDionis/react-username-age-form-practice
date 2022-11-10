@@ -4,6 +4,7 @@ import Card from './Card'
 import Button from './Button'
 import classes from './ErrorModal.module.css'
 
+//Lesson 97
 //onConfirm is pointing to function in AddUser component and the reason why we put it on the first div (with the backdrop), that is us CLICKING THE BACKDROP and will set the state to null and allow access again
 //the button is also pointing to the same function, doing the same thing
 const ErrorModal = props => {
